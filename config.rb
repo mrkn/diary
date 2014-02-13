@@ -4,6 +4,8 @@
 
 # Time.zone = "UTC"
 
+set :slim, { :pretty => true, :sort_attrs => false, :format => :html5 }
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -12,7 +14,7 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "articles/{year}-{month}-{day}-{title}.html"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
+  blog.layout = "article"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
