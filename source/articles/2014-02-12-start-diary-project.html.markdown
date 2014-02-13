@@ -1,7 +1,6 @@
 ---
-title: Start diary project
+title: Middleman を使った日記をはじめるための準備を始めた
 ---
-# Middleman を使った日記をはじめるための準備を始めた
 
 ふと、はてなブログではなくて Middleman を使って Web 日記を書いてみたくなった。きっと、そらはーの影響だと思う。
 そこで、早速 `gem install middleman-blog` から開始してみた。
