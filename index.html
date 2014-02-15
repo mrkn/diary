@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mrkn 記</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        mrkn 記
+      </h1>
+      <div id="main" role="main">
+<h2>
+  2014-02-15
+</h2>
+<h3>
+  <a href="/2014/02/15/setup-new-mbp13.html">新しい MBP13 のセットアップ</a>
+</h3>
+<article>
+  <p>新しい MBP13 の初期設定作業を開始した。今日は、以下の作業を完了させた。</p>
+  
+  <ul>
+    <li>電源を入れる。</li>
+    <li>最初の設定をする。</li>
+    <li>Mac AppStore を起動して更新を適用し、必要な購入済みアプリをインストール。</li>
+    <li>iOS Dev Center から Xcode 5.1beta をダウンロード。</li>
+  </ul>
+  
+  <p>明日以降は以下の作業が待っている。</p>
+  
+  <ul>
+    <li>Xcode 5.1 beta のインストール。</li>
+    <li>homebrew をインストール。</li>
+    <li>Brewfile を作る。</li>
+  </ul>
+  
+  <p>おやすみなさい。</p>
+  
+</article>
+<h3>
+  <a href="/2014/02/15/rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a>
+</h3>
+<article><p>CRuby の <a href="bugs.ruby-lang.org/issues/8850">Feature #8850</a> で提案されている Rational を10進小数展開する機能を実装してみた。
+循環節の検出は、セルオートマトンの周期解を検出するときに使った手法を応用した。</p>
+
+<p>この手法では、1桁ずつの展開 (標準展開) と2桁ずつの展開 (倍速展開) を同時に進め、両者の状態 (剰余) が等しくなったときに循環を見付けたことになる。</p>
+
+<p>標準展開の末尾の位置と倍速展開の末尾の位置の差が循環節の長さに一致する。</p>
+
+<p>循環節の先頭位置を見付けるには、標準展開と倍速展開のそれぞれの末尾から1桁ずつ前に戻りながら桁の値を比較していけば良い。
+たとえば、循環を検出した時点で以下のような小数展開が得られたとしよう。</p>
+
+<pre><code>123.4567891357924680123450987613579246801234
+                       ^ 標準展開の末尾
+                                           ^ 倍速展開の末尾
+</code></pre>
+
+<p>標準展開の末尾と倍速展開の末尾にあるカーソルを両方1桁ずつ前に移動させながら、それぞれのカーソルが指す桁の値が等しくなくなるまで繰替えすと次のようになる。</p>
+
+<pre><code>123.4567891357924680123450987613579246801234
+         ^ 標準展開のカーソル
+                             ^ 倍速展開のカーソル
+</code></pre>
+
+<p>このときの標準展開のカーソルが指す桁の直後から循環節が開始し、倍速展開のカーソルが指す位置までが循環節になっている。</p>
+
+<p>このアルゴリズムは循環を検出するまで循環節の桁数より多くの桁を小数展開するが、循環節の桁数の2倍以上は展開することはない。
+必要な記憶領域は剰余2つ分使用し、2桁を展開するために2回の剰余を実行する。</p>
+
+</article>
+<h2>
+  2014-02-13
+</h2>
+<h3>
+  <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a>
+</h3>
+<article><p>簡単だった。Gemfile に <code>gem "slim", "~&gt; 2.0.0"</code> と書いて <code>bundle install</code> し、erb ファイルを slim へ変換するだけ。
+出力される HTML ファイルを pretty にするため、次の1行を <code>config.rb</code> に記述した。</p>
+
+<p><code>ruby
+set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
+</code></p>
+
+<p>しかし問題がある。development モードでの反応が ERB だったときよりも遅いのだ。</p>
+
+<p>Chrome を再起動したら遅い問題が解決したような気がする。</p>
+
+</article>
+<h3>
+  <a href="/2014/02/13/01-environment-construction-of-new-mac.html">新しい Mac の環境構築について調べている</a>
+</h3>
+<article>
+  <p>今週届いた新しい MacBook Pro 13 Retina をどうやってセットアップしようか悩んでる。
+  現在のメインマシンである MacBook Air 11 (mid 2012) の設定のうち必要なものだけを引き継いで使いたい。
+  アプリケーションも MBA11 にインストールされているものは引き続きインストールしておきたい。
+  ただし、完全に移行するのではなく、新規の状態から構築していきたい。
+  そして、すべてをマニュアルでやるのではなく、可能な限り自動化してしまいたい。</p>
+  
+  <p>Boxen って今どうなんだろう？と気になったので調べてみると、brew-cask なんてものがあることを知る。
+  brew-cask を使うと Homebrew で Google Chrome のような一般のアプリケーションも管理できるらしい。
+  これと Brewfile を併用すると便利そうなので後日きちんと調べようと思う。</p>
+  
+</article>
+<h2>
+  2014-02-12
+</h2>
+<h3>
+  <a href="/2014/02/12/start-diary-project.html">Middleman を使った日記をはじめるための準備を始めた</a>
+</h3>
+<article><p>ふと、はてなブログではなくて Middleman を使って Web 日記を書いてみたくなった。きっと、そらはーの影響だと思う。
+そこで、早速 <code>gem install middleman-blog</code> から開始してみた。</p>
+
+<p>今日は、ローカルにリポジトリを作り、記事ファイルを置くディレクトリを分離し、Bootstrap 3 を導入した。
+ファイル名からタイトルを良い感じで自動生成してくれないのが不便だね。
+明日は、もう少し見た目を洗練させたい。ERB から Slim へ移行するのもやりたいね。</p>
+
+</article>
+      </div>
+      <aside>
+        <h2>
+          Recent Articles
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014/02/15/setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/15/rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><span>Feb 13</span>
+          </li>
+          <li>
+            <a href="/2014/02/13/01-environment-construction-of-new-mac.html">新しい Mac の環境構築について調べている</a><span>Feb 13</span>
+          </li>
+          <li>
+            <a href="/2014/02/12/start-diary-project.html">Middleman を使った日記をはじめるための準備を始めた</a><span>Feb 12</span>
+          </li>
+        </ol>
+        <h2>
+          Tags
+        </h2>
+        <ol>
+          <li>
+            <a href="/tags/middleman.html">middleman</a>(2)
+          </li>
+          <li>
+            <a href="/tags/mac.html">mac</a>(2)
+          </li>
+          <li>
+            <a href="/tags/dev-infra.html">dev-infra</a>(2)
+          </li>
+          <li>
+            <a href="/tags/homebrew.html">homebrew</a>(1)
+          </li>
+          <li>
+            <a href="/tags/brew-cask.html">brew-cask</a>(1)
+          </li>
+          <li>
+            <a href="/tags/slim.html">slim</a>(1)
+          </li>
+          <li>
+            <a href="/tags/ruby.html">ruby</a>(1)
+          </li>
+        </ol>
+        <h2>
+          By Year
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014.html">2014</a>(5)
+          </li>
+        </ol>
+      </aside>
+    </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

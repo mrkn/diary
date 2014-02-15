@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ブログのレイアウトファイルを ERB から Slim へ変更した - mrkn 記</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <small><a href="/">mrkn 記</a></small>
+      </h1>
+      <article id="main" role="main">
+        <h1>
+          ブログのレイアウトファイルを ERB から Slim へ変更した
+        </h1><p>簡単だった。Gemfile に <code>gem "slim", "~&gt; 2.0.0"</code> と書いて <code>bundle install</code> し、erb ファイルを slim へ変換するだけ。
+出力される HTML ファイルを pretty にするため、次の1行を <code>config.rb</code> に記述した。</p>
+
+<p><code>ruby
+set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
+</code></p>
+
+<p>しかし問題がある。development モードでの反応が ERB だったときよりも遅いのだ。</p>
+
+<p>Chrome を再起動したら遅い問題が解決したような気がする。</p>
+
+      </article>
+      <aside>
+        <h2>
+          Recent Article
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014/02/15/setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/15/rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><span>Feb 13</span>
+          </li>
+          <li>
+            <a href="/2014/02/13/01-environment-construction-of-new-mac.html">新しい Mac の環境構築について調べている</a><span>Feb 13</span>
+          </li>
+          <li>
+            <a href="/2014/02/12/start-diary-project.html">Middleman を使った日記をはじめるための準備を始めた</a><span>Feb 12</span>
+          </li>
+        </ol>
+        <h2>
+          Tags
+        </h2>
+        <ol>
+          <li>
+            <a href="/tags/middleman.html">middleman</a>(2)
+          </li>
+          <li>
+            <a href="/tags/mac.html">mac</a>(2)
+          </li>
+          <li>
+            <a href="/tags/dev-infra.html">dev-infra</a>(2)
+          </li>
+          <li>
+            <a href="/tags/homebrew.html">homebrew</a>(1)
+          </li>
+          <li>
+            <a href="/tags/brew-cask.html">brew-cask</a>(1)
+          </li>
+          <li>
+            <a href="/tags/slim.html">slim</a>(1)
+          </li>
+          <li>
+            <a href="/tags/ruby.html">ruby</a>(1)
+          </li>
+        </ol>
+        <h2>
+          By Year
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014.html">2014</a>(5)
+          </li>
+        </ol>
+      </aside>
+    </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
