@@ -1,5 +1,6 @@
 ---
 title: Middleman を使った日記をはじめるための準備を始めた
+tags: middleman
 ---
 
 ふと、はてなブログではなくて Middleman を使って Web 日記を書いてみたくなった。きっと、そらはーの影響だと思う。

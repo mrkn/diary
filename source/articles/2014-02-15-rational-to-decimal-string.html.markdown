@@ -1,5 +1,6 @@
 ---
 title: Rational を10進小数展開するアルゴリズムを実装した
+tags: ruby
 ---
 
 CRuby の [Feature #8850](bugs.ruby-lang.org/issues/8850) で提案されている Rational を10進小数展開する機能を実装してみた。

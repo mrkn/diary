@@ -1,5 +1,6 @@
 ---
 title: 新しい Mac の環境構築について調べている
+tags: mac, dev-infra, homebrew, brew-cask
 ---
 
 今週届いた新しい MacBook Pro 13 Retina をどうやってセットアップしようか悩んでる。

@@ -1,5 +1,6 @@
 ---
 title: ブログのレイアウトファイルを ERB から Slim へ変更した
+tags: middleman, slim
 ---
 
 簡単だった。Gemfile に `gem "slim", "~> 2.0.0"` と書いて `bundle install` し、erb ファイルを slim へ変換するだけ。
