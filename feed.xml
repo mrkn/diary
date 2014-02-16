@@ -58,11 +58,11 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/15/02-rational-to-decimal-string.html"/>
     <id>http://blog.url.com/2014/02/15/02-rational-to-decimal-string.html</id>
     <published>2014-02-15T00:00:00Z</published>
-    <updated>2014-02-16T13:51:19+09:00</updated>
+    <updated>2014-02-16T14:18:09+09:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;CRuby の &lt;a href="bugs.ruby-lang.org/issues/8850"&gt;Feature #8850&lt;/a&gt; で提案されている Rational を10進小数展開する機能を実装してみた。
+    <content type="html">&lt;p&gt;CRuby の &lt;a href="https://bugs.ruby-lang.org/issues/8850"&gt;Feature #8850&lt;/a&gt; で提案されている Rational を10進小数展開する機能を実装してみた。
 循環節の検出は、セルオートマトンの周期解を検出するときに使った手法を応用した。&lt;/p&gt;
 
 &lt;p&gt;この手法では、1桁ずつの展開 (標準展開) と2桁ずつの展開 (倍速展開) を同時に進め、両者の状態 (剰余) が等しくなったときに循環を見付けたことになる。&lt;/p&gt;
@@ -88,6 +88,8 @@
 
 &lt;p&gt;このアルゴリズムは循環を検出するまで循環節の桁数より多くの桁を小数展開するが、循環節の桁数の2倍以上は展開することはない。
 必要な記憶領域は剰余2つ分使用し、2桁を展開するために2回の剰余を実行する。&lt;/p&gt;
+
+&lt;p&gt;[TODO] 循環節の先頭を探索するために二分探索が使えるので後で実装すること。&lt;/p&gt;
 </content>
   </entry>
   <entry>

@@ -15,12 +15,9 @@
         mrkn 記
       </h1>
       <div id="main" role="main">
-<h2>
-  2014-02-16
-</h2>
-<h3>
-  <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a>
-</h3>
+<h1>
+  <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><small class="post-date">2014-02-16</small>
+</h1>
 <article>
   <p>昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
   良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
@@ -28,12 +25,9 @@
   次からは <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html">API</a> を使って管理できて便利になると思う。</p>
   
 </article>
-<h2>
-  2014-02-15
-</h2>
-<h3>
-  <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a>
-</h3>
+<h1>
+  <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><small class="post-date">2014-02-15</small>
+</h1>
 <article>
   <p>新しい MBP13 の初期設定作業を開始した。今日は、以下の作業を完了させた。</p>
   
@@ -55,10 +49,10 @@
   <p>おやすみなさい。</p>
   
 </article>
-<h3>
-  <a href="/2014/02/15/02-rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a>
-</h3>
-<article><p>CRuby の <a href="bugs.ruby-lang.org/issues/8850">Feature #8850</a> で提案されている Rational を10進小数展開する機能を実装してみた。
+<h1>
+  <a href="/2014/02/15/02-rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><small class="post-date">2014-02-15</small>
+</h1>
+<article><p>CRuby の <a href="https://bugs.ruby-lang.org/issues/8850">Feature #8850</a> で提案されている Rational を10進小数展開する機能を実装してみた。
 循環節の検出は、セルオートマトンの周期解を検出するときに使った手法を応用した。</p>
 
 <p>この手法では、1桁ずつの展開 (標準展開) と2桁ずつの展開 (倍速展開) を同時に進め、両者の状態 (剰余) が等しくなったときに循環を見付けたことになる。</p>
@@ -85,13 +79,12 @@
 <p>このアルゴリズムは循環を検出するまで循環節の桁数より多くの桁を小数展開するが、循環節の桁数の2倍以上は展開することはない。
 必要な記憶領域は剰余2つ分使用し、2桁を展開するために2回の剰余を実行する。</p>
 
+<p>[TODO] 循環節の先頭を探索するために二分探索が使えるので後で実装すること。</p>
+
 </article>
-<h2>
-  2014-02-13
-</h2>
-<h3>
-  <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a>
-</h3>
+<h1>
+  <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><small class="post-date">2014-02-13</small>
+</h1>
 <article><p>簡単だった。Gemfile に <code>gem "slim", "~&gt; 2.0.0"</code> と書いて <code>bundle install</code> し、erb ファイルを slim へ変換するだけ。
 出力される HTML ファイルを pretty にするため、次の1行を <code>config.rb</code> に記述した。</p>
 
@@ -104,9 +97,9 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
 <p>Chrome を再起動したら遅い問題が解決したような気がする。</p>
 
 </article>
-<h3>
-  <a href="/2014/02/13/01-environment-construction-of-new-mac.html">新しい Mac の環境構築について調べている</a>
-</h3>
+<h1>
+  <a href="/2014/02/13/01-environment-construction-of-new-mac.html">新しい Mac の環境構築について調べている</a><small class="post-date">2014-02-13</small>
+</h1>
 <article>
   <p>今週届いた新しい MacBook Pro 13 Retina をどうやってセットアップしようか悩んでる。
   現在のメインマシンである MacBook Air 11 (mid 2012) の設定のうち必要なものだけを引き継いで使いたい。
@@ -119,12 +112,9 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
   これと Brewfile を併用すると便利そうなので後日きちんと調べようと思う。</p>
   
 </article>
-<h2>
-  2014-02-12
-</h2>
-<h3>
-  <a href="/2014/02/12/start-diary-project.html">Middleman を使った日記をはじめるための準備を始めた</a>
-</h3>
+<h1>
+  <a href="/2014/02/12/start-diary-project.html">Middleman を使った日記をはじめるための準備を始めた</a><small class="post-date">2014-02-12</small>
+</h1>
 <article><p>ふと、はてなブログではなくて Middleman を使って Web 日記を書いてみたくなった。きっと、そらはーの影響だと思う。
 そこで、早速 <code>gem install middleman-blog</code> から開始してみた。</p>
 
