@@ -3,7 +3,7 @@ title: Rational を10進小数展開するアルゴリズムを実装した
 tags: ruby
 ---
 
-CRuby の [Feature #8850](bugs.ruby-lang.org/issues/8850) で提案されている Rational を10進小数展開する機能を実装してみた。
+CRuby の [Feature #8850](https://bugs.ruby-lang.org/issues/8850) で提案されている Rational を10進小数展開する機能を実装してみた。
 循環節の検出は、セルオートマトンの周期解を検出するときに使った手法を応用した。
 
 この手法では、1桁ずつの展開 (標準展開) と2桁ずつの展開 (倍速展開) を同時に進め、両者の状態 (剰余) が等しくなったときに循環を見付けたことになる。
