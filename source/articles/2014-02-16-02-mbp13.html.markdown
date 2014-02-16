@@ -1,0 +1,8 @@
+---
+title: 今日の MBP13
+tags: dev-infra
+---
+
+今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。
+
+それだけ。
