@@ -1,0 +1,9 @@
+---
+title: DNS をバリュードメインから Route 53 に変えた
+tags: mrkn.jp, value-domain, route53,
+---
+
+昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
+良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
+初めて使ったので Web コンソールからちまちまデータを移行したけど、
+次からは [API](http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html) を使って管理できて便利になると思う。
