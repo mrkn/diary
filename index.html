@@ -16,6 +16,37 @@
       </h1>
       <div id="main" role="main">
 <h1>
+  <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><small class="post-date">2014-02-16</small>
+</h1>
+<article>
+  <p>昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
+  良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
+  初めて使ったので Web コンソールからちまちまデータを移行したけど、
+  次からは <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html">API</a> を使って管理できて便利になると思う。</p>
+  
+</article>
+<h1>
+  <a href="/2014/02/16/04-iijmio-registration.html">HTC One に入れる micro SIM を入手するため IIJmio と契約した</a><small class="post-date">2014-02-16</small>
+</h1>
+<article>
+  <p>HTC One の Developer Edition を昨年の6月に買ってからずっと SIM なしでやってきた。ほとんど使わなかったからなんだけど。
+  でも、ここ最近はまた Android を触る頻度が高まってきていて、HTC One 単独でデータ通信ができる状態にして使用感を確かめたくなる事が増えそうな気がしている。</p>
+  
+  <p>そこで、IIJmio の micro SIM カードを契約してみた。
+  手続きの途中で「パスワードは表示されますのでご注意ください」と言われたときはちょっとビックリしたけど、無事に契約できたのでカードが届くのが楽しみだ。
+  パスワードはボタンで表示・非表示を切り替えられるようにすると良いと思った。</p>
+  
+</article>
+<h1>
+  <a href="/2014/02/16/02-mbp13.html">今日の MBP13</a><small class="post-date">2014-02-16</small>
+</h1>
+<article>
+  <p>今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。</p>
+  
+  <p>それだけ。</p>
+  
+</article>
+<h1>
   <a href="/2014/02/16/03-cooking.html">今日の料理</a><small class="post-date">2014-02-16</small>
 </h1>
 <article>
@@ -29,49 +60,6 @@
   <p>同時に写ってる包丁のおかげで、とても大きいことが分かるだろう。この椎茸に、一緒に買ってきたカマンベールチーズを詰めてトースターグリルで焼くだけの超かんたんメニューだ。</p>
   
   <p>サッポロクラシック。</p>
-  
-</article>
-<h1>
-  <a href="/2014/02/16/02-mbp13.html">今日の MBP13</a><small class="post-date">2014-02-16</small>
-</h1>
-<article>
-  <p>今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。</p>
-  
-  <p>それだけ。</p>
-  
-</article>
-<h1>
-  <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><small class="post-date">2014-02-16</small>
-</h1>
-<article>
-  <p>昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
-  良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
-  初めて使ったので Web コンソールからちまちまデータを移行したけど、
-  次からは <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html">API</a> を使って管理できて便利になると思う。</p>
-  
-</article>
-<h1>
-  <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><small class="post-date">2014-02-15</small>
-</h1>
-<article>
-  <p>新しい MBP13 の初期設定作業を開始した。今日は、以下の作業を完了させた。</p>
-  
-  <ul>
-    <li>電源を入れる。</li>
-    <li>最初の設定をする。</li>
-    <li>Mac AppStore を起動して更新を適用し、必要な購入済みアプリをインストール。</li>
-    <li>iOS Dev Center から Xcode 5.1beta をダウンロード。</li>
-  </ul>
-  
-  <p>明日以降は以下の作業が待っている。</p>
-  
-  <ul>
-    <li>Xcode 5.1 beta のインストール。</li>
-    <li>homebrew をインストール。</li>
-    <li>Brewfile を作る。</li>
-  </ul>
-  
-  <p>おやすみなさい。</p>
   
 </article>
 <h1>
@@ -106,6 +94,30 @@
 
 <p>[TODO] 循環節の先頭を探索するために二分探索が使えるので後で実装すること。</p>
 
+</article>
+<h1>
+  <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><small class="post-date">2014-02-15</small>
+</h1>
+<article>
+  <p>新しい MBP13 の初期設定作業を開始した。今日は、以下の作業を完了させた。</p>
+  
+  <ul>
+    <li>電源を入れる。</li>
+    <li>最初の設定をする。</li>
+    <li>Mac AppStore を起動して更新を適用し、必要な購入済みアプリをインストール。</li>
+    <li>iOS Dev Center から Xcode 5.1beta をダウンロード。</li>
+  </ul>
+  
+  <p>明日以降は以下の作業が待っている。</p>
+  
+  <ul>
+    <li>Xcode 5.1 beta のインストール。</li>
+    <li>homebrew をインストール。</li>
+    <li>Brewfile を作る。</li>
+  </ul>
+  
+  <p>おやすみなさい。</p>
+  
 </article>
 <h1>
   <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><small class="post-date">2014-02-13</small>
@@ -155,19 +167,22 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
         </h2>
         <ol>
           <li>
-            <a href="/2014/02/16/03-cooking.html">今日の料理</a><span>Feb 16</span>
+            <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><span>Feb 16</span>
+          </li>
+          <li>
+            <a href="/2014/02/16/04-iijmio-registration.html">HTC One に入れる micro SIM を入手するため IIJmio と契約した</a><span>Feb 16</span>
           </li>
           <li>
             <a href="/2014/02/16/02-mbp13.html">今日の MBP13</a><span>Feb 16</span>
           </li>
           <li>
-            <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><span>Feb 16</span>
-          </li>
-          <li>
-            <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
+            <a href="/2014/02/16/03-cooking.html">今日の料理</a><span>Feb 16</span>
           </li>
           <li>
             <a href="/2014/02/15/02-rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
           </li>
           <li>
             <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><span>Feb 13</span>
@@ -184,21 +199,6 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
         </h2>
         <ol>
           <li>
-            <a href="/tags/ruby.html">ruby</a>(1)
-          </li>
-          <li>
-            <a href="/tags/middleman.html">middleman</a>(2)
-          </li>
-          <li>
-            <a href="/tags/mrkn-jp.html">mrkn.jp</a>(1)
-          </li>
-          <li>
-            <a href="/tags/value-domain.html">value-domain</a>(1)
-          </li>
-          <li>
-            <a href="/tags/route53.html">route53</a>(1)
-          </li>
-          <li>
             <a href="/tags/mac.html">mac</a>(2)
           </li>
           <li>
@@ -211,10 +211,31 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
             <a href="/tags/brew-cask.html">brew-cask</a>(1)
           </li>
           <li>
+            <a href="/tags/middleman.html">middleman</a>(2)
+          </li>
+          <li>
             <a href="/tags/cooking.html">cooking</a>(1)
           </li>
           <li>
+            <a href="/tags/ruby.html">ruby</a>(1)
+          </li>
+          <li>
             <a href="/tags/slim.html">slim</a>(1)
+          </li>
+          <li>
+            <a href="/tags/iijmio.html">iijmio</a>(1)
+          </li>
+          <li>
+            <a href="/tags/htc-one.html">htc one</a>(1)
+          </li>
+          <li>
+            <a href="/tags/mrkn-jp.html">mrkn.jp</a>(1)
+          </li>
+          <li>
+            <a href="/tags/value-domain.html">value-domain</a>(1)
+          </li>
+          <li>
+            <a href="/tags/route53.html">route53</a>(1)
           </li>
         </ol>
         <h2>
@@ -222,7 +243,7 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
         </h2>
         <ol>
           <li>
-            <a href="/2014.html">2014</a>(8)
+            <a href="/2014.html">2014</a>(9)
           </li>
         </ol>
       </aside>
