@@ -3,7 +3,7 @@ language: ruby
 env:
   global:
     - secure: "MOMDUibIMINQYumqhjZHMYmh+fIgl53QJojYpVMzGzkzuEImo1L5/U0u8+FS4/aBmwP/9g0f6oLiRaoS7FG0OpEZakJJFlR9FLR9rj1O7HulKjH3nBCjQN/Osrbug/ldr4ldM9HankJw5YKzZUMJnpq2rKb4xQV5gFzELuVcx1w="
-    - GIT_COMMITER_NAME='Kenta Murata'
+    - GIT_COMMITTER_NAME='Kenta Murata'
     - GIT_COMMITTER_EMAIL='mrkn@mrkn.jp'
     - GIT_AUTHOR_NAME='Kenta Murata'
     - GIT_AUTHOR_EMAIL='mrkn@mrkn.jp'
