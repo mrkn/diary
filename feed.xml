@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/16/01-route-53.html"/>
     <id>http://blog.url.com/2014/02/16/01-route-53.html</id>
     <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-16T13:24:48+09:00</updated>
+    <updated>2014-02-16T07:16:03+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -29,7 +29,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/15/01-setup-new-mbp13.html"/>
     <id>http://blog.url.com/2014/02/15/01-setup-new-mbp13.html</id>
     <published>2014-02-15T00:00:00Z</published>
-    <updated>2014-02-16T13:51:19+09:00</updated>
+    <updated>2014-02-16T07:16:03+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -58,7 +58,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/15/02-rational-to-decimal-string.html"/>
     <id>http://blog.url.com/2014/02/15/02-rational-to-decimal-string.html</id>
     <published>2014-02-15T00:00:00Z</published>
-    <updated>2014-02-16T14:18:09+09:00</updated>
+    <updated>2014-02-16T07:16:03+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -93,11 +93,31 @@
 </content>
   </entry>
   <entry>
+    <title>新しい Mac の環境構築について調べている</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/13/01-environment-construction-of-new-mac.html"/>
+    <id>http://blog.url.com/2014/02/13/01-environment-construction-of-new-mac.html</id>
+    <published>2014-02-13T00:00:00Z</published>
+    <updated>2014-02-16T07:16:03+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;今週届いた新しい MacBook Pro 13 Retina をどうやってセットアップしようか悩んでる。
+現在のメインマシンである MacBook Air 11 (mid 2012) の設定のうち必要なものだけを引き継いで使いたい。
+アプリケーションも MBA11 にインストールされているものは引き続きインストールしておきたい。
+ただし、完全に移行するのではなく、新規の状態から構築していきたい。
+そして、すべてをマニュアルでやるのではなく、可能な限り自動化してしまいたい。&lt;/p&gt;
+
+&lt;p&gt;Boxen って今どうなんだろう？と気になったので調べてみると、brew-cask なんてものがあることを知る。
+brew-cask を使うと Homebrew で Google Chrome のような一般のアプリケーションも管理できるらしい。
+これと Brewfile を併用すると便利そうなので後日きちんと調べようと思う。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>ブログのレイアウトファイルを ERB から Slim へ変更した</title>
     <link rel="alternate" href="http://blog.url.com/2014/02/13/02-middleman-with-slim.html"/>
     <id>http://blog.url.com/2014/02/13/02-middleman-with-slim.html</id>
     <published>2014-02-13T00:00:00Z</published>
-    <updated>2014-02-16T13:51:04+09:00</updated>
+    <updated>2014-02-16T07:16:03+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -114,31 +134,11 @@ set :slim, { :pretty =&amp;gt; true, :sort_attrs =&amp;gt; false, :format =&amp;
 </content>
   </entry>
   <entry>
-    <title>新しい Mac の環境構築について調べている</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/13/01-environment-construction-of-new-mac.html"/>
-    <id>http://blog.url.com/2014/02/13/01-environment-construction-of-new-mac.html</id>
-    <published>2014-02-13T00:00:00Z</published>
-    <updated>2014-02-16T13:51:04+09:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;今週届いた新しい MacBook Pro 13 Retina をどうやってセットアップしようか悩んでる。
-現在のメインマシンである MacBook Air 11 (mid 2012) の設定のうち必要なものだけを引き継いで使いたい。
-アプリケーションも MBA11 にインストールされているものは引き続きインストールしておきたい。
-ただし、完全に移行するのではなく、新規の状態から構築していきたい。
-そして、すべてをマニュアルでやるのではなく、可能な限り自動化してしまいたい。&lt;/p&gt;
-
-&lt;p&gt;Boxen って今どうなんだろう？と気になったので調べてみると、brew-cask なんてものがあることを知る。
-brew-cask を使うと Homebrew で Google Chrome のような一般のアプリケーションも管理できるらしい。
-これと Brewfile を併用すると便利そうなので後日きちんと調べようと思う。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Middleman を使った日記をはじめるための準備を始めた</title>
     <link rel="alternate" href="http://blog.url.com/2014/02/12/start-diary-project.html"/>
     <id>http://blog.url.com/2014/02/12/start-diary-project.html</id>
     <published>2014-02-12T00:00:00Z</published>
-    <updated>2014-02-16T13:51:04+09:00</updated>
+    <updated>2014-02-16T07:16:03+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
