@@ -16,10 +16,23 @@
       </h1>
       <div id="main" role="main">
 <h2>
+  2014-02-16
+</h2>
+<h3>
+  <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a>
+</h3>
+<article>
+  <p>昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
+  良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
+  初めて使ったので Web コンソールからちまちまデータを移行したけど、
+  次からは <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html">API</a> を使って管理できて便利になると思う。</p>
+  
+</article>
+<h2>
   2014-02-15
 </h2>
 <h3>
-  <a href="/2014/02/15/setup-new-mbp13.html">新しい MBP13 のセットアップ</a>
+  <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a>
 </h3>
 <article>
   <p>新しい MBP13 の初期設定作業を開始した。今日は、以下の作業を完了させた。</p>
@@ -43,7 +56,7 @@
   
 </article>
 <h3>
-  <a href="/2014/02/15/rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a>
+  <a href="/2014/02/15/02-rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a>
 </h3>
 <article><p>CRuby の <a href="bugs.ruby-lang.org/issues/8850">Feature #8850</a> で提案されている Rational を10進小数展開する機能を実装してみた。
 循環節の検出は、セルオートマトンの周期解を検出するときに使った手法を応用した。</p>
@@ -127,10 +140,13 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
         </h2>
         <ol>
           <li>
-            <a href="/2014/02/15/setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
+            <a href="/2014/02/16/01-route-53.html">DNS をバリュードメインから Route 53 に変えた</a><span>Feb 16</span>
           </li>
           <li>
-            <a href="/2014/02/15/rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><span>Feb 15</span>
+            <a href="/2014/02/15/01-setup-new-mbp13.html">新しい MBP13 のセットアップ</a><span>Feb 15</span>
+          </li>
+          <li>
+            <a href="/2014/02/15/02-rational-to-decimal-string.html">Rational を10進小数展開するアルゴリズムを実装した</a><span>Feb 15</span>
           </li>
           <li>
             <a href="/2014/02/13/02-middleman-with-slim.html">ブログのレイアウトファイルを ERB から Slim へ変更した</a><span>Feb 13</span>
@@ -167,13 +183,22 @@ set :slim, { :pretty =&gt; true, :sort_attrs =&gt; false, :format =&gt; :html5 }
           <li>
             <a href="/tags/ruby.html">ruby</a>(1)
           </li>
+          <li>
+            <a href="/tags/mrkn-jp.html">mrkn.jp</a>(1)
+          </li>
+          <li>
+            <a href="/tags/value-domain.html">value-domain</a>(1)
+          </li>
+          <li>
+            <a href="/tags/route53.html">route53</a>(1)
+          </li>
         </ol>
         <h2>
           By Year
         </h2>
         <ol>
           <li>
-            <a href="/2014.html">2014</a>(5)
+            <a href="/2014.html">2014</a>(6)
           </li>
         </ol>
       </aside>

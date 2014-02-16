@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Middleman を使った日記をはじめるための準備を始めた - mrkn 記</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <title>DNS をバリュードメインから Route 53 に変えた - mrkn 記</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
@@ -16,14 +16,13 @@
       </h1>
       <article id="main" role="main">
         <h1>
-          Middleman を使った日記をはじめるための準備を始めた
-        </h1><p>ふと、はてなブログではなくて Middleman を使って Web 日記を書いてみたくなった。きっと、そらはーの影響だと思う。
-そこで、早速 <code>gem install middleman-blog</code> から開始してみた。</p>
-
-<p>今日は、ローカルにリポジトリを作り、記事ファイルを置くディレクトリを分離し、Bootstrap 3 を導入した。
-ファイル名からタイトルを良い感じで自動生成してくれないのが不便だね。
-明日は、もう少し見た目を洗練させたい。ERB から Slim へ移行するのもやりたいね。</p>
-
+          DNS をバリュードメインから Route 53 に変えた
+        </h1>
+        <p>昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
+        良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
+        初めて使ったので Web コンソールからちまちまデータを移行したけど、
+        次からは <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html">API</a> を使って管理できて便利になると思う。</p>
+        
       </article>
       <aside>
         <h2>
