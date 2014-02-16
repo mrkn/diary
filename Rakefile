@@ -30,6 +30,7 @@ end
 
 def build
   sh 'bundle exec middleman build'
+  sh "cp CNAME #{DEST_DIR}/"
 end
 
 def clean
@@ -42,7 +43,7 @@ def push_repo(uri, branch)
   Dir.chdir(DEST_DIR) do
     sh 'git add -A'
     sh "git commit -m 'Update with #{sha1}'"
-    system "git push --quiet #{uri} #{branch} 2>/dev/null"
+    system "git push --quiet #{uri} #{branch}"
   end
 end
 
