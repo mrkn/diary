@@ -5,16 +5,30 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-02-18T00:00:00Z</updated>
+  <updated>2014-02-19T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>年齢が帰れと言っている</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/19/age.html"/>
+    <id>http://blog.url.com/2014/02/19/age.html</id>
+    <published>2014-02-19T00:00:00Z</published>
+    <updated>2014-02-19T16:05:01+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p&gt;年齢が帰れと言っている&lt;/p&gt;&amp;mdash; 老害エンジニアの中の若手, Ph.D (@mrkn) &lt;a href="https://twitter.com/mrkn/statuses/436116668608024576"&gt;February 19, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Android アプリ開発2日目</title>
     <link rel="alternate" href="http://blog.url.com/2014/02/18/01-android-development-2nd-day.html"/>
     <id>http://blog.url.com/2014/02/18/01-android-development-2nd-day.html</id>
     <published>2014-02-18T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
+    <updated>2014-02-19T16:05:01+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -44,7 +58,7 @@ Android のフレームワークの各要素の役割は思ったほど難しく
     <link rel="alternate" href="http://blog.url.com/2014/02/17/01-new-iphone-cover.html"/>
     <id>http://blog.url.com/2014/02/17/01-new-iphone-cover.html</id>
     <published>2014-02-17T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
+    <updated>2014-02-19T16:05:01+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -56,18 +70,17 @@ Android のフレームワークの各要素の役割は思ったほど難しく
 </content>
   </entry>
   <entry>
-    <title>DNS をバリュードメインから Route 53 に変えた</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/16/01-route-53.html"/>
-    <id>http://blog.url.com/2014/02/16/01-route-53.html</id>
+    <title>今日の MBP13</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/16/02-mbp13.html"/>
+    <id>http://blog.url.com/2014/02/16/02-mbp13.html</id>
     <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
+    <updated>2014-02-19T16:05:01+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
-良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
-初めて使ったので Web コンソールからちまちまデータを移行したけど、
-次からは &lt;a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html"&gt;API&lt;/a&gt; を使って管理できて便利になると思う。&lt;/p&gt;
+    <content type="html">&lt;p&gt;今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。&lt;/p&gt;
+
+&lt;p&gt;それだけ。&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -75,7 +88,7 @@ Android のフレームワークの各要素の役割は思ったほど難しく
     <link rel="alternate" href="http://blog.url.com/2014/02/16/04-iijmio-registration.html"/>
     <id>http://blog.url.com/2014/02/16/04-iijmio-registration.html</id>
     <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
+    <updated>2014-02-19T16:05:01+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -88,38 +101,18 @@ Android のフレームワークの各要素の役割は思ったほど難しく
 </content>
   </entry>
   <entry>
-    <title>今日の MBP13</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/16/02-mbp13.html"/>
-    <id>http://blog.url.com/2014/02/16/02-mbp13.html</id>
+    <title>DNS をバリュードメインから Route 53 に変えた</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/16/01-route-53.html"/>
+    <id>http://blog.url.com/2014/02/16/01-route-53.html</id>
     <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
+    <updated>2014-02-19T16:05:01+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。&lt;/p&gt;
-
-&lt;p&gt;それだけ。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>今日の料理</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/16/03-cooking.html"/>
-    <id>http://blog.url.com/2014/02/16/03-cooking.html</id>
-    <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-18T17:38:05+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;iframe class="instagram" src="//instagram.com/p/kekHR9EN8B/embed/" width="400" height="464" frameborder="0" scrolling="no" allowtransparency="true"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;今日は久々に料理をした。作ったものは&lt;a href="http://cookpad.com/recipe/1754134"&gt;椎茸のカマンベール焼き&lt;/a&gt;だ。この椎茸、実はとても大きい。昨日、家の近くのクイーンズ伊勢丹で購入したものだ。
-どのくらい大きいかは、次の写真を見れば分かる。&lt;/p&gt;
-
-&lt;iframe class="instagram" src="//instagram.com/p/kefyvGEN33/embed/" width="400" height="464" frameborder="0" scrolling="no" allowtransparency="true"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;同時に写ってる包丁のおかげで、とても大きいことが分かるだろう。この椎茸に、一緒に買ってきたカマンベールチーズを詰めてトースターグリルで焼くだけの超かんたんメニューだ。&lt;/p&gt;
-
-&lt;p&gt;サッポロクラシック。&lt;/p&gt;
+    <content type="html">&lt;p&gt;昨晩、バリュードメインで diary.mrkn.jp という CNAME を追加しようとしたけど、エラーが出続けてログインすらできなかった。
+良いタイミングだと思ったので、mrkn.jp の DNS を Amazon Route 53 に移行した。
+初めて使ったので Web コンソールからちまちまデータを移行したけど、
+次からは &lt;a href="http://docs.aws.amazon.com/Route53/latest/APIReference/Welcome.html"&gt;API&lt;/a&gt; を使って管理できて便利になると思う。&lt;/p&gt;
 </content>
   </entry>
 </feed>
