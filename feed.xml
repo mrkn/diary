@@ -5,16 +5,33 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-02-21T00:00:00Z</updated>
+  <updated>2014-02-22T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>診察券は必要なんだろうか</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/22/01-consultation-ticket.html"/>
+    <id>http://blog.url.com/2014/02/22/01-consultation-ticket.html</id>
+    <published>2014-02-22T00:00:00Z</published>
+    <updated>2014-02-22T13:35:54+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;今日は、昨日に引き続き風邪と闘う一日だった。&lt;/p&gt;
+
+&lt;p&gt;昨日は診察券を持たずに耳鼻科へ行ったところ、病院のデータベースから来院歴を検索して、ちょうど2年前に訪れていたことが判明したのだった。
+ということは、次回も診察券を持たずに行っても大丈夫ってことにならないだろうか？何故診察券は必要なのだろう？&lt;/p&gt;
+
+&lt;p&gt;次回の来院時には保険証が変わってるかもしれないからかな？&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>風邪をひいた</title>
     <link rel="alternate" href="http://blog.url.com/2014/02/21/got-a-cold.html"/>
     <id>http://blog.url.com/2014/02/21/got-a-cold.html</id>
     <published>2014-02-21T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
+    <updated>2014-02-22T13:35:54+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -40,7 +57,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/20/jimweirich.html"/>
     <id>http://blog.url.com/2014/02/20/jimweirich.html</id>
     <published>2014-02-20T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
+    <updated>2014-02-22T13:35:54+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -54,7 +71,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/19/age.html"/>
     <id>http://blog.url.com/2014/02/19/age.html</id>
     <published>2014-02-19T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
+    <updated>2014-02-22T13:35:54+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -68,7 +85,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/18/01-android-development-2nd-day.html"/>
     <id>http://blog.url.com/2014/02/18/01-android-development-2nd-day.html</id>
     <published>2014-02-18T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
+    <updated>2014-02-22T13:35:54+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -98,7 +115,7 @@ Android のフレームワークの各要素の役割は思ったほど難しく
     <link rel="alternate" href="http://blog.url.com/2014/02/17/01-new-iphone-cover.html"/>
     <id>http://blog.url.com/2014/02/17/01-new-iphone-cover.html</id>
     <published>2014-02-17T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
+    <updated>2014-02-22T13:35:54+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -107,20 +124,6 @@ Android のフレームワークの各要素の役割は思ったほど難しく
 &lt;p&gt;&lt;a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00D94RHOG/mrknjp-22/ref=nosim"&gt;Spigen の ネオ・ハイブリッドという製品&lt;/a&gt;にした。裏には&lt;a href="http://www.amazon.co.jp/exec/obidos/ASIN/B009GETF2A/mrknjp-22/ref=nosim"&gt;バンカーリング&lt;/a&gt;を付けた。&lt;/p&gt;
 
 &lt;p&gt;いままで使っていた Apple 純正の赤い革製カバーは大変汚れてしまったので捨てます。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>今日の MBP13</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/16/02-mbp13.html"/>
-    <id>http://blog.url.com/2014/02/16/02-mbp13.html</id>
-    <published>2014-02-16T00:00:00Z</published>
-    <updated>2014-02-21T13:32:13+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;今日は、昨晩寝る前にダウンロードしておいた Xcode 5.1 beta 5 をインストールし、さらに Mac App Store から安定板の Xcode 5 もインストールした。&lt;/p&gt;
-
-&lt;p&gt;それだけ。&lt;/p&gt;
 </content>
   </entry>
 </feed>
