@@ -1,0 +1,9 @@
+---
+title: Ruby 2.1.1 リリース
+tags: ruby
+---
+
+今日、2月24日は Ruby の誕生日。おめでとうございます。
+
+そんな日に [Ruby 2.1.1 がリリースされた](https://www.ruby-lang.org/en/news/2014/02/24/ruby-2-1-1-is-released/)。ありがとうございます。
+
