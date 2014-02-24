@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jenkins のプラギンを作ってみたくなった - mrkn 記</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href="/stylesheets/blog.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <small><a href="/">mrkn 記</a></small>
+      </h1>
+      <article id="main" role="main">
+        <h1>
+          Jenkins のプラギンを作ってみたくなった
+        </h1><p>Android アプリ開発をやり初めてから Java にまた慣れてきたこともあって、今度は Jenkins の Plugin を作ってみたくなった。</p>
+
+<p>Jenkins のプラグインを開発するためには何が必要か調べてみた。だいぶ前に調べたときは maven が必須だったはずだけど、<a href="https://jenkins-ci.org/node/363">いまは Gradle を使ってビルドできる</a>そうだ。
+具体的な方法は<a href="https://wiki.jenkins-ci.org/display/JENKINS/Gradle+JPI+Plugin">この Wiki のページ</a>に書いてある。その内容を適当に訳したものを以下に書いておく。</p>
+
+<h2 id="section">必要条件</h2>
+
+<ul>
+  <li>Gradle 1.0 milestone 6 以上</li>
+  <li>プラグインが Jenkins 1.420 以上を対象にビルドされること</li>
+</ul>
+
+<h2 id="section-1">初期化</h2>
+
+<p>プラグイン用のプロジェクトディレクトリは、プラグイン名が <code>foo</code> だったら、<code>foo</code> または <code>foo-plugin</code> にする必要がある。そして、<code>build.gradle</code> に次の内容を書く:</p>
+
+<pre><code class="language-groovy">apply from:"https://raw.github.com/jenkinsci/gradle-jpi-plugin/master/install"
+// Or copy the contents of that URL into your build.gradle directly.
+
+// Whatever other plugins you need to load.
+
+groupId = "org.jenkins-ci.plugins"
+version = "0.0.1-SNAPSHOT"    // Or whatever your version is.
+description = "A description of your plugin"
+
+jenkinsPlugin {
+    coreVersion = '1.420'                                               // Version of Jenkins core this plugin depends on.
+    displayName = 'Hello World plugin built with Gradle'                // Human-readable name of plugin.
+    url = 'http://wiki.jenkins-ci.org/display/JENKINS/SomePluginPage'   // URL for plugin on Jenkins wiki or elsewhere.
+    gitHubUrl = 'https://github.com/jenkinsci/some-plugin'              // Plugin URL on GitHub. Optional.
+
+   // The developers section is optional, and corresponds to the POM developers section.
+   developers {
+       developer {
+           id 'abayer'
+           name 'Andrew Bayer'
+           email 'andrew.bayer@gmail.com'
+       }
+   }                           
+
+}
+</code></pre>
+
+<p>もし追加で必要なリポジトリが存在するなら、それを <code>jenkinsPlugin</code> セクションの後ろに追記する。</p>
+
+<h2 id="section-2">ビルド</h2>
+
+<p><code>gradle celan jpi</code> を実行する。</p>
+
+<h2 id="section-3">テスト</h2>
+
+<ul>
+  <li><code>gradle test</code> で全ユニットテストを実行できる。maven と違ってテストは自動的に実行されない。</li>
+  <li>手動テスト用に Jenkins を起動したい場合は <code>gradle server</code> を実行する。Jenkins はポート 8080 で起動する。</li>
+</ul>
+
+<h2 id="section-4">リリース</h2>
+
+<ul>
+  <li>自動的にリリースすることはないので、今の状態がリリース可能かどうかは各自で管理すること。</li>
+  <li><code>gradle clean uploadArchives</code> を実行すればリリースできる。このコマンドは、プラグインをビルドし、Jenkins の Maven リポジトリへデプロイする。
+    <ul>
+      <li>
+        <p>Jenkins Maven リポジトリへアクセスするためのユーザ情報を、<code>~/.jenkins-ci.org</code> に以下のように書いておくこと。</p>
+
+        <pre><code>userName=yourusername
+password=yourpassword
+</code></pre>
+      </li>
+      <li>
+        <p><code>gradle clean deploy</code> でもリリースできる。<code>deploy</code> タスクは <code>uploadArchives</code> のエイリアスになってる。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section-5">例</h2>
+
+<ul>
+  <li><a href="https://github.com/jenkinsci/associated-files-plugin">Associated File Plugin</a> は Gradle でビルドとリリースが行なわれている。</li>
+  <li><a href="https://github.com/jenkinsci/git-plugin">Git plugin</a> はまだ Maven で運用されてるけど、<code>build.gradle</code> が追加されている。</li>
+  <li><a href="https://github.com/jenkinsci/hello-world-plugin">Hello World plugin</a> も参考になるはず。</li>
+</ul>
+
+      </article>
+      <aside>
+        <h2>
+          Recent Article
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014/02/24/02-development-of-jenkins-plugin.html">Jenkins のプラギンを作ってみたくなった</a><span>Feb 24</span>
+          </li>
+          <li>
+            <a href="/2014/02/24/01-ruby-2.1.1-is-released.html">Ruby 2.1.1 リリース</a><span>Feb 24</span>
+          </li>
+          <li>
+            <a href="/2014/02/22/01-consultation-ticket.html">診察券は必要なんだろうか</a><span>Feb 22</span>
+          </li>
+          <li>
+            <a href="/2014/02/21/got-a-cold.html">風邪をひいた</a><span>Feb 21</span>
+          </li>
+          <li>
+            <a href="/2014/02/20/jimweirich.html">RIP Jim Weirich</a><span>Feb 20</span>
+          </li>
+          <li>
+            <a href="/2014/02/19/age.html">年齢が帰れと言っている</a><span>Feb 19</span>
+          </li>
+          <li>
+            <a href="/2014/02/18/01-android-development-2nd-day.html">Android アプリ開発2日目</a><span>Feb 18</span>
+          </li>
+          <li>
+            <a href="/2014/02/17/01-new-iphone-cover.html">iPhone のカバーを新調した</a><span>Feb 17</span>
+          </li>
+          <li>
+            <a href="/2014/02/16/04-iijmio-registration.html">HTC One に入れる micro SIM を入手するため IIJmio と契約した</a><span>Feb 16</span>
+          </li>
+          <li>
+            <a href="/2014/02/16/03-cooking.html">今日の料理</a><span>Feb 16</span>
+          </li>
+        </ol>
+        <h2>
+          Tags
+        </h2>
+        <ol>
+          <li>
+            <a href="/tags/ruby.html">ruby</a>(2)
+          </li>
+          <li>
+            <a href="/tags/iijmio.html">iijmio</a>(1)
+          </li>
+          <li>
+            <a href="/tags/htc-one.html">htc one</a>(1)
+          </li>
+          <li>
+            <a href="/tags/middleman.html">middleman</a>(2)
+          </li>
+          <li>
+            <a href="/tags/android.html">android</a>(1)
+          </li>
+          <li>
+            <a href="/tags/java.html">java</a>(1)
+          </li>
+          <li>
+            <a href="/tags/jenkins.html">jenkins</a>(1)
+          </li>
+          <li>
+            <a href="/tags/iphone.html">iphone</a>(1)
+          </li>
+          <li>
+            <a href="/tags/mrkn-jp.html">mrkn.jp</a>(1)
+          </li>
+          <li>
+            <a href="/tags/value-domain.html">value-domain</a>(1)
+          </li>
+          <li>
+            <a href="/tags/route53.html">route53</a>(1)
+          </li>
+          <li>
+            <a href="/tags/mac.html">mac</a>(2)
+          </li>
+          <li>
+            <a href="/tags/dev-infra.html">dev-infra</a>(3)
+          </li>
+          <li>
+            <a href="/tags/homebrew.html">homebrew</a>(1)
+          </li>
+          <li>
+            <a href="/tags/brew-cask.html">brew-cask</a>(1)
+          </li>
+          <li>
+            <a href="/tags/cooking.html">cooking</a>(1)
+          </li>
+          <li>
+            <a href="/tags/slim.html">slim</a>(1)
+          </li>
+          <li>
+            <a href="/tags/thought.html">thought</a>(1)
+          </li>
+        </ol>
+        <h2>
+          By Year
+        </h2>
+        <ol>
+          <li>
+            <a href="/2014.html">2014</a>(17)
+          </li>
+        </ol>
+      </aside>
+    </div>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

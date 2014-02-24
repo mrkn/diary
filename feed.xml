@@ -5,16 +5,125 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-02-22T00:00:00Z</updated>
+  <updated>2014-02-24T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Jenkins のプラギンを作ってみたくなった</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/24/02-development-of-jenkins-plugin.html"/>
+    <id>http://blog.url.com/2014/02/24/02-development-of-jenkins-plugin.html</id>
+    <published>2014-02-24T00:00:00Z</published>
+    <updated>2014-02-24T15:01:18+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Android アプリ開発をやり初めてから Java にまた慣れてきたこともあって、今度は Jenkins の Plugin を作ってみたくなった。&lt;/p&gt;
+
+&lt;p&gt;Jenkins のプラグインを開発するためには何が必要か調べてみた。だいぶ前に調べたときは maven が必須だったはずだけど、&lt;a href="https://jenkins-ci.org/node/363"&gt;いまは Gradle を使ってビルドできる&lt;/a&gt;そうだ。
+具体的な方法は&lt;a href="https://wiki.jenkins-ci.org/display/JENKINS/Gradle+JPI+Plugin"&gt;この Wiki のページ&lt;/a&gt;に書いてある。その内容を適当に訳したものを以下に書いておく。&lt;/p&gt;
+
+&lt;h2 id="section"&gt;必要条件&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gradle 1.0 milestone 6 以上&lt;/li&gt;
+  &lt;li&gt;プラグインが Jenkins 1.420 以上を対象にビルドされること&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="section-1"&gt;初期化&lt;/h2&gt;
+
+&lt;p&gt;プラグイン用のプロジェクトディレクトリは、プラグイン名が &lt;code&gt;foo&lt;/code&gt; だったら、&lt;code&gt;foo&lt;/code&gt; または &lt;code&gt;foo-plugin&lt;/code&gt; にする必要がある。そして、&lt;code&gt;build.gradle&lt;/code&gt; に次の内容を書く:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-groovy"&gt;apply from:"https://raw.github.com/jenkinsci/gradle-jpi-plugin/master/install"
+// Or copy the contents of that URL into your build.gradle directly.
+
+// Whatever other plugins you need to load.
+
+groupId = "org.jenkins-ci.plugins"
+version = "0.0.1-SNAPSHOT"    // Or whatever your version is.
+description = "A description of your plugin"
+
+jenkinsPlugin {
+    coreVersion = '1.420'                                               // Version of Jenkins core this plugin depends on.
+    displayName = 'Hello World plugin built with Gradle'                // Human-readable name of plugin.
+    url = 'http://wiki.jenkins-ci.org/display/JENKINS/SomePluginPage'   // URL for plugin on Jenkins wiki or elsewhere.
+    gitHubUrl = 'https://github.com/jenkinsci/some-plugin'              // Plugin URL on GitHub. Optional.
+
+   // The developers section is optional, and corresponds to the POM developers section.
+   developers {
+       developer {
+           id 'abayer'
+           name 'Andrew Bayer'
+           email 'andrew.bayer@gmail.com'
+       }
+   }                           
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もし追加で必要なリポジトリが存在するなら、それを &lt;code&gt;jenkinsPlugin&lt;/code&gt; セクションの後ろに追記する。&lt;/p&gt;
+
+&lt;h2 id="section-2"&gt;ビルド&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;gradle celan jpi&lt;/code&gt; を実行する。&lt;/p&gt;
+
+&lt;h2 id="section-3"&gt;テスト&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;gradle test&lt;/code&gt; で全ユニットテストを実行できる。maven と違ってテストは自動的に実行されない。&lt;/li&gt;
+  &lt;li&gt;手動テスト用に Jenkins を起動したい場合は &lt;code&gt;gradle server&lt;/code&gt; を実行する。Jenkins はポート 8080 で起動する。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="section-4"&gt;リリース&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;自動的にリリースすることはないので、今の状態がリリース可能かどうかは各自で管理すること。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;gradle clean uploadArchives&lt;/code&gt; を実行すればリリースできる。このコマンドは、プラグインをビルドし、Jenkins の Maven リポジトリへデプロイする。
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Jenkins Maven リポジトリへアクセスするためのユーザ情報を、&lt;code&gt;~/.jenkins-ci.org&lt;/code&gt; に以下のように書いておくこと。&lt;/p&gt;
+
+        &lt;pre&gt;&lt;code&gt;userName=yourusername
+password=yourpassword
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code&gt;gradle clean deploy&lt;/code&gt; でもリリースできる。&lt;code&gt;deploy&lt;/code&gt; タスクは &lt;code&gt;uploadArchives&lt;/code&gt; のエイリアスになってる。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="section-5"&gt;例&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/jenkinsci/associated-files-plugin"&gt;Associated File Plugin&lt;/a&gt; は Gradle でビルドとリリースが行なわれている。&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/jenkinsci/git-plugin"&gt;Git plugin&lt;/a&gt; はまだ Maven で運用されてるけど、&lt;code&gt;build.gradle&lt;/code&gt; が追加されている。&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/jenkinsci/hello-world-plugin"&gt;Hello World plugin&lt;/a&gt; も参考になるはず。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ruby 2.1.1 リリース</title>
+    <link rel="alternate" href="http://blog.url.com/2014/02/24/01-ruby-2.1.1-is-released.html"/>
+    <id>http://blog.url.com/2014/02/24/01-ruby-2.1.1-is-released.html</id>
+    <published>2014-02-24T00:00:00Z</published>
+    <updated>2014-02-24T15:01:18+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;今日、2月24日は Ruby の誕生日。おめでとうございます。&lt;/p&gt;
+
+&lt;p&gt;そんな日に &lt;a href="https://www.ruby-lang.org/en/news/2014/02/24/ruby-2-1-1-is-released/"&gt;Ruby 2.1.1 がリリースされた&lt;/a&gt;。ありがとうございます。&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>診察券は必要なんだろうか</title>
     <link rel="alternate" href="http://blog.url.com/2014/02/22/01-consultation-ticket.html"/>
     <id>http://blog.url.com/2014/02/22/01-consultation-ticket.html</id>
     <published>2014-02-22T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
+    <updated>2014-02-24T15:01:18+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -31,7 +140,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/21/got-a-cold.html"/>
     <id>http://blog.url.com/2014/02/21/got-a-cold.html</id>
     <published>2014-02-21T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
+    <updated>2014-02-24T15:01:18+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -57,7 +166,7 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/20/jimweirich.html"/>
     <id>http://blog.url.com/2014/02/20/jimweirich.html</id>
     <published>2014-02-20T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
+    <updated>2014-02-24T15:01:18+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -71,59 +180,13 @@
     <link rel="alternate" href="http://blog.url.com/2014/02/19/age.html"/>
     <id>http://blog.url.com/2014/02/19/age.html</id>
     <published>2014-02-19T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
+    <updated>2014-02-24T15:01:18+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
     <content type="html">&lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p&gt;年齢が帰れと言っている&lt;/p&gt;&amp;mdash; 老害エンジニアの中の若手, Ph.D (@mrkn) &lt;a href="https://twitter.com/mrkn/statuses/436116668608024576"&gt;February 19, 2014&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Android アプリ開発2日目</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/18/01-android-development-2nd-day.html"/>
-    <id>http://blog.url.com/2014/02/18/01-android-development-2nd-day.html</id>
-    <published>2014-02-18T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;実は、昨日から仕事で Android アプリ開発をやっている。
-期間は最長2週間で、とある iOS 用のアプリを Android へ適切に移植する事を目指している。&lt;/p&gt;
-
-&lt;p&gt;1日目の昨日は環境整備と超簡単な入門教材をこなし、Android アプリをゼロから作る練習をした。
-2日目の今日は、本体の目的であるアプリの開発にとりかかった。&lt;/p&gt;
-
-&lt;p&gt;iOS アプリ開発の経験、大昔に Swing や AWT や GTK+ などを使った経験、オブジェクト指向に関連する知識などを総動員すると、
-Android のフレームワークの各要素の役割は思ったほど難しくなく、素直に理解できている気がする。&lt;/p&gt;
-
-&lt;p&gt;その代わり、細々としたやりたい事について、それをどう実現すれば良いのかを調べて解決するのにまだ時間を取られてしまっている。
-こればかりは、勝手が違う系の問題だと思うので、時間が解決してくれるのを待つしかないのだろう。&lt;/p&gt;
-
-&lt;p&gt;そういえば、Android Studio が Vim キーバインドのプラグインを持ってることも知らず2日も過していた。
-よく考えれば Android Studio は IntelliJ なんだからそういうプラグインがあるのは当然だ。
-それに、こんなことは一言「Vim キーバインド使えなんですかね？」と周りの Android エンジニアに話し掛けるだけで解決したはずだ。
-不慣れな環境に浸ることで、コミュニケーションの大切さを思い知ってる気がする。&lt;/p&gt;
-
-&lt;p&gt;今日の夕方頃は、「明日くらいには半分くらい進捗してそうだし余裕なんでは」とか考えていたけど、
-明日は水曜日で15時までほとんどミーティングで潰れてしまう悲惨な日だということを今思い出した。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>iPhone のカバーを新調した</title>
-    <link rel="alternate" href="http://blog.url.com/2014/02/17/01-new-iphone-cover.html"/>
-    <id>http://blog.url.com/2014/02/17/01-new-iphone-cover.html</id>
-    <published>2014-02-17T00:00:00Z</published>
-    <updated>2014-02-22T13:35:54+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;iframe class="instagram" src="//instagram.com/p/khV6r-kN9C/embed/" width="400" height="464" frameborder="0" scrolling="no" allowtransparency="true"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00D94RHOG/mrknjp-22/ref=nosim"&gt;Spigen の ネオ・ハイブリッドという製品&lt;/a&gt;にした。裏には&lt;a href="http://www.amazon.co.jp/exec/obidos/ASIN/B009GETF2A/mrknjp-22/ref=nosim"&gt;バンカーリング&lt;/a&gt;を付けた。&lt;/p&gt;
-
-&lt;p&gt;いままで使っていた Apple 純正の赤い革製カバーは大変汚れてしまったので捨てます。&lt;/p&gt;
 </content>
   </entry>
 </feed>
