@@ -4,16 +4,30 @@
   <id>http://diary.mrkn.jp/</id>
   <link href="http://diary.mrkn.jp/"/>
   <link href="http://diary.mrkn.jp/feed.xml" rel="self"/>
-  <updated>2014-02-24T00:00:00Z</updated>
+  <updated>2014-03-01T00:00:00Z</updated>
   <author>
     <name>mrkn</name>
   </author>
+  <entry>
+    <title>ただの日記</title>
+    <link rel="alternate" href="http://diary.mrkn.jp/2014/03/01/01-diary.html"/>
+    <id>http://diary.mrkn.jp/2014/03/01/01-diary.html</id>
+    <published>2014-03-01T00:00:00Z</published>
+    <updated>2014-03-01T15:31:48+00:00</updated>
+    <author>
+      <name>mrkn</name>
+    </author>
+    <content type="html">&lt;p&gt;1週間ほど日記をさぼってしまった。理由は、風邪がまだ治ってないにもかかわらず、毎日朝8時頃に出社して帰りが24時近くなってたから。先週1週間が1週間もなかったかのように過ぎ去っていったから、忙しかったんだろうけど忙しいと感じることすらなかった気がする。&lt;/p&gt;
+
+&lt;p&gt;やりたい事がたくさんありすぎて時間が無いなと感じるとき、よく「寝てる時間が惜しい」と思っていた。でも最近は、それが間違いだと思うようになった。惜しいのは寝てる時間じゃなくて、ウェブで遊んでる時間だ。&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ruby 2.1.1 リリース</title>
     <link rel="alternate" href="http://diary.mrkn.jp/2014/02/24/01-ruby-2.1.1-is-released.html"/>
     <id>http://diary.mrkn.jp/2014/02/24/01-ruby-2.1.1-is-released.html</id>
     <published>2014-02-24T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
+    <updated>2014-03-01T15:31:48+00:00</updated>
     <author>
       <name>mrkn</name>
     </author>
@@ -28,7 +42,7 @@
     <link rel="alternate" href="http://diary.mrkn.jp/2014/02/24/02-development-of-jenkins-plugin.html"/>
     <id>http://diary.mrkn.jp/2014/02/24/02-development-of-jenkins-plugin.html</id>
     <published>2014-02-24T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
+    <updated>2014-03-01T15:31:48+00:00</updated>
     <author>
       <name>mrkn</name>
     </author>
@@ -122,7 +136,7 @@ password=yourpassword
     <link rel="alternate" href="http://diary.mrkn.jp/2014/02/22/01-consultation-ticket.html"/>
     <id>http://diary.mrkn.jp/2014/02/22/01-consultation-ticket.html</id>
     <published>2014-02-22T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
+    <updated>2014-03-01T15:31:48+00:00</updated>
     <author>
       <name>mrkn</name>
     </author>
@@ -139,7 +153,7 @@ password=yourpassword
     <link rel="alternate" href="http://diary.mrkn.jp/2014/02/21/got-a-cold.html"/>
     <id>http://diary.mrkn.jp/2014/02/21/got-a-cold.html</id>
     <published>2014-02-21T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
+    <updated>2014-03-01T15:31:48+00:00</updated>
     <author>
       <name>mrkn</name>
     </author>
@@ -165,27 +179,13 @@ password=yourpassword
     <link rel="alternate" href="http://diary.mrkn.jp/2014/02/20/jimweirich.html"/>
     <id>http://diary.mrkn.jp/2014/02/20/jimweirich.html</id>
     <published>2014-02-20T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
+    <updated>2014-03-01T15:31:48+00:00</updated>
     <author>
       <name>mrkn</name>
     </author>
     <content type="html">&lt;p&gt;Jim Weirich が亡くなったそうだ。一昨年の RubyConf 2012 で Y combinator をライブコーディングしていた姿が眩しかった、僕にとっては一人のヒーローだった。&lt;/p&gt;
 
 &lt;p&gt;ありがとうございました。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>年齢が帰れと言っている</title>
-    <link rel="alternate" href="http://diary.mrkn.jp/2014/02/19/age.html"/>
-    <id>http://diary.mrkn.jp/2014/02/19/age.html</id>
-    <published>2014-02-19T00:00:00Z</published>
-    <updated>2014-03-01T10:06:40+00:00</updated>
-    <author>
-      <name>mrkn</name>
-    </author>
-    <content type="html">&lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p&gt;年齢が帰れと言っている&lt;/p&gt;&amp;mdash; 老害エンジニアの中の若手, Ph.D (@mrkn) &lt;a href="https://twitter.com/mrkn/statuses/436116668608024576"&gt;February 19, 2014&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-
 </content>
   </entry>
 </feed>
